@@ -4,12 +4,6 @@
 </script>
 
 <style>
-  :global(body) {
-    color: #374047;
-    font-family: "Source Code Pro", monospace;
-    font-size: 14px;
-  }
-
   .container {
     display: flex;
   }
