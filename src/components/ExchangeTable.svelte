@@ -3,8 +3,7 @@
 
   import { getDay, isWeekend, getWeekdayMinIndex } from '../utils'
 
-  const tableData = data.reverse().slice(0, 14);
-  const weekdayMinIndex = getWeekdayMinIndex(tableData);
+  const weekdayMinIndex = getWeekdayMinIndex(data);
 </script>
 
 <style>
@@ -29,7 +28,7 @@
 <div class='exchange-table'>
 HRK/USD rate (last 14 days)<br />
 -----------------------------<br />
-{#each tableData as item, index}
+{#each data as item, index}
   <div class="row" class:weekend={isWeekend(item.datum_primjene)} class:min={weekdayMinIndex === index}>
     <span>{getDay(item.datum_primjene)}</span><span>{item.datum_primjene}</span><span>{item.srednji_tecaj}</span>
   </div>

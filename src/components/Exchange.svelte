@@ -19,7 +19,7 @@
         rates.set({
           loading: false,
           error: null,
-          results: res,
+          results: res.reverse().slice(0,14),
         })
       })
       .catch(err => {
