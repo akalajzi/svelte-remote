@@ -1,9 +1,16 @@
 <script>
   export let data;
 
+  import { onMount } from 'svelte';
   import { getDay, isWeekend, getWeekdayMinIndex } from '../utils'
 
-  const weekdayMinIndex = getWeekdayMinIndex(data);
+  let tableData = [];
+  let weekdayMinIndex = null;
+
+  onMount(() => {
+    tableData = data.slice(0,14);
+    weekdayMinIndex = getWeekdayMinIndex(tableData);
+  });
 </script>
 
 <style>
@@ -28,7 +35,7 @@
 <div class='exchange-table'>
 HRK/USD rate (last 14 days)<br />
 -----------------------------<br />
-{#each data as item, index}
+{#each tableData as item, index}
   <div class="row" class:weekend={isWeekend(item.datum_primjene)} class:min={weekdayMinIndex === index}>
     <span>{getDay(item.datum_primjene)}</span><span>{item.datum_primjene}</span><span>{item.srednji_tecaj}</span>
   </div>
