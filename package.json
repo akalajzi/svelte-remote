@@ -16,7 +16,7 @@
     "sirv-cli": "^0.4.4"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "rm -rf build && cp -R ./public ./build && rollup -c && sh ./postbuild.sh",
     "autobuild": "rollup -c -w",
     "dev": "run-p start:dev autobuild",
     "start": "sirv public --single",
