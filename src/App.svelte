@@ -1,7 +1,17 @@
 <script>
-  import Content from './components/Content.svelte'
-  import Menu from './components/Menu.svelte'
+  import Content from "./components/Content.svelte";
+  import Menu from "./components/Menu.svelte";
 </script>
+
+<div class="container">
+  <aside>
+    <img src="/logo.png" width="220" height="56" alt="remote.hr" />
+    <Menu />
+  </aside>
+  <div class="content">
+    <Content />
+  </div>
+</div>
 
 <style>
   .container {
@@ -18,7 +28,8 @@
   @media all and (min-width: 800px) {
     .container {
       width: 800px;
-      margin: 40px auto 0 auto;
+      padding-top: 40px;
+      margin: 0 auto;
     }
 
     aside {
@@ -47,15 +58,4 @@
       padding-top: 12px;
     }
   }
-
 </style>
-
-<div class='container'>
-  <aside>
-    <img src="/logo.png" width="220" height="56" alt="remote.hr" />
-    <Menu />
-  </aside>
-  <div class='content'>
-    <Content />
-  </div>
-</div>
