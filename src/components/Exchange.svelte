@@ -8,7 +8,7 @@
 
   function fetchRates(from, to) {
     // const API_PATH = `https://cors-anywhere.herokuapp.com/api.hnb.hr/tecajn/v2?valuta=USD&datum-primjene-od=${from}&datum-primjene-do=${to}`
-    const API_PATH = `/api/proxy/hnb?from=${from}&to=${to}`;
+    const API_PATH = `https://remote.hr/api/proxy/hnb?from=${from}&to=${to}`;
     if (!$rates.results) {
       rates.set({
         ...$rates,
