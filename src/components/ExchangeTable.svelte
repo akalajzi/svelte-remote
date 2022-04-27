@@ -8,7 +8,7 @@
   let weekdayMinIndex = null;
 
   onMount(() => {
-    tableData = data.slice(0,14);
+    tableData = data.slice(0,28);
     weekdayMinIndex = getWeekdayMinIndex(tableData);
   });
 </script>
@@ -33,7 +33,7 @@
 </style>
 
 <div class='exchange-table'>
-HRK/USD rate (last 14 days)<br />
+HRK/USD rate (last 28 days)<br />
 -----------------------------<br />
 {#each tableData as item, index}
   <div class="row" class:weekend={isWeekend(item.datum_primjene)} class:min={weekdayMinIndex === index}>
